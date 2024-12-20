@@ -1,0 +1,6 @@
+Please review the following blog post and identify any of the following issues:
+1. *Unqualified Conditionals* – Look for words like "may," "could," "might," "possibly," etc., and check if the conditions under which these events occur are clearly specified. Replace vague language with more precise statements.
+2. *Weak Assertions / Passive Voice* – Look for phrases like "there is no way" or "this API can be called." Replace these with stronger, more assertive statements (e.g., "it is impossible" or "[specific entity] can call this API"). Ensure the language is confident and direct.
+3. *Unquantified Comparisons* – Identify comparisons that lack specifics (e.g., "more efficient," "better," "faster"). Ensure comparisons are backed by measurable data (e.g., "X is 30% faster in terms of CPU usage" or "Y is more secure against SQL injection attacks"). If a comparison is subjective, it should be clearly labeled as such.
+
+[Your blog post text goes here.]
