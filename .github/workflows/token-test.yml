@@ -1,14 +1,16 @@
-permissions:
-  contents: write  # Attempt to override repo settings
+name: Test GITHUB_TOKEN Permissions
+on: push  # Trigger on push to the repo
+
 jobs:
-  escalate:
+  test-job:  # Job ID
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Required for testing
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Try malicious commit
+      - name: Attempt Commit
         run: |
-          git config --global user.name "attacker"
-          git config --global user.email "attacker@example.com"
-          git commit --allow-empty -m "Escalation test" || echo "Failed (expected)"
-          git push origin main || echo "Push blocked (expected)"
+          git config --global user.name "github-actions[bot]"
+          git commit --allow-empty -m "Test commit"
+          git push origin main
