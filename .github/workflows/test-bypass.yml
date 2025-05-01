@@ -1,0 +1,6 @@
+on: pull_request
+jobs:
+  hack:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "If this runs, Actions aren't fully disabled!"
