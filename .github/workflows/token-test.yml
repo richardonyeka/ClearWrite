@@ -1,0 +1,14 @@
+permissions:
+  contents: write  # Attempt to override repo settings
+jobs:
+  escalate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Try malicious commit
+        run: |
+          git config --global user.name "attacker"
+          git config --global user.email "attacker@example.com"
+          git commit --allow-empty -m "Escalation test" || echo "Failed (expected)"
+          git push origin main || echo "Push blocked (expected)"
